@@ -1,0 +1,34 @@
+<%- include('../template/head')-%>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <%- include('../template/nav')-%>
+        <h1 class="cover-heading">Table Example</h1>
+        <div class="container bg-light text-dark">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Framework</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%table.forEach(function(entry) {%>
+                    <tr>
+                        <td><%=entry.name%></td>
+                        <td><%=entry.url%></td>
+                    </tr>
+                    <%});%>
+                </tbody>
+            </table>
+        </div>
+        <%- include('../template/footer')-%>
+    </div>
+
+</body>
+<script>
+    window.onload = function() {
+        document.getElementById('table').classList.add('active');
+      };
+</script>
+</html>
